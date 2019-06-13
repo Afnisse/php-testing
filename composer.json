@@ -1,0 +1,23 @@
+{
+    "name": "oussama-elgoumri/php-testing",
+    "type": "library",
+    "version": "0.0.1",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oussama Elgoumri",
+            "email": "elgomri.oussama@gmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "OussamaElgoumri\\Component\\Testing\\": "src/"
+        }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.3"
+    }
+}

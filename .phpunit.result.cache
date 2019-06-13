@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":244:{a:2:{s:7:"defects";a:1:{s:27:"TestCaseTest::test__it_pass";i:4;}s:5:"times";a:4:{s:27:"TestCaseTest::test__it_pass";d:0.002;s:26:"TestCaseTest::test__invoke";d:0.002;s:24:"TestCaseTest::test__attr";d:0;s:28:"TestCaseTest::test__buffered";d:0;}}}
