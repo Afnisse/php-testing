@@ -8,8 +8,6 @@
 
 # Usage
 
-### Testing protected/private php methods
-
 First extends `TestCase` in your test class
 
 ```php
@@ -34,6 +32,8 @@ class Foo {
 }
 ```
 
+### Testing protected methods
+
 To test the method `add` we would write:
 
 ```php
@@ -47,6 +47,8 @@ function test__my_private_method()
 }
 ```
 
+### Testing protected properties
+
 To get the value of a private property:
 
 ```php
@@ -59,6 +61,8 @@ function test__my_private_property()
     $this->assertEquals($name, 'Oussama Elgoumri');
 }
 ```
+
+### Accessing protected properties
 
 To set the value of a private property:
 
@@ -74,7 +78,7 @@ function test__my_private_property()
 }
 ```
 
-To instantiate an object without calling it's constructor
+### Instantiate object without calling it's constructor
 
 ```php
 use OussamaElgoumri\Component\Testing\TestCase;
