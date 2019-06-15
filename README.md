@@ -10,6 +10,17 @@
 
 ### Testing protected/private php methods
 
+First extends `TestCase` in your test class
+
+```php
+use OussamaElgoumri\Component\Testing\TestCase;
+
+class MyAwesomeTest extends TestCase
+{
+    // Testing MyAwesome object
+}
+```
+
 let's assume that we want to test the following class
 
 ```php
@@ -60,5 +71,17 @@ function test__my_private_property()
     $this->attr($foo, 'active', true);
     $is_active = $this->attr($foo, 'active');
     $this->assertEquals($is_active, true);
+}
+```
+
+To instantiate an object without calling it's constructor
+
+```php
+use OussamaElgoumri\Component\Testing\TestCase;
+
+function test__instantiate_without_constructor()
+{
+    $foo = $this->newInstanceWithoutConstructor(Foo::class);
+    $foo->doStuff();
 }
 ```
