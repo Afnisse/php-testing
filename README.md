@@ -92,7 +92,7 @@ function test__instantiate_without_constructor()
 
 ### Capture the output buffer, echo..
 
-`buffer()` method will capture all output to stdout and return it in a variable
+`buffered()` method will capture all output to stdout and return it in a variable
 that you can test it's content.
 
 Let's assume the following method
@@ -108,7 +108,7 @@ If we want to capture and test the content of the echo message, we do
 ```php
 function test__sayHi()
 {
-    $output = $this->buffer(function() {
+    $output = $this->buffered(function() {
         $g = new Greeter;
         $g->sayHi();
     });
