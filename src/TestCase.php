@@ -6,9 +6,23 @@ use PHPUnit\Framework\TestCase as BaseTestCase;
 use ReflectionMethod;
 use ReflectionProperty;
 use Throwable;
+use ReflectionClass;
 
 class TestCase extends BaseTestCase
 {
+    /**
+     * Instantiate an object without calling it's constructor.
+     *
+     * @param string $class
+     * @return object
+     */
+    protected function newInstanceWithoutConstructor(string $class): object
+    {
+        $rf = new ReflectionClass($class);
+
+        return $rf->newInstanceWithoutConstructor();
+    }
+
     /**
      * Test protected/private methods.
      *

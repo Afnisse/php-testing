@@ -4,6 +4,12 @@ use OussamaElgoumri\Component\Testing\TestCase;
 
 class TestCaseTest extends TestCase
 {
+    function test__newInstanceWithoutWithoutConstructor()
+    {
+        $i = $this->newInstanceWithoutConstructor(Bar::class);
+        $this->assertTrue($i->callMe());
+    }
+
     function test__invoke()
     {
         $f = new Foo;
@@ -29,6 +35,16 @@ class TestCaseTest extends TestCase
         });
 
         $this->assertEquals($output, 'Hi there!');
+    }
+}
+
+class Bar {
+    function __construct() {
+        die("Better luck next time :)");
+    }
+
+    function callMe() {
+        return true;
     }
 }
 
