@@ -89,3 +89,30 @@ function test__instantiate_without_constructor()
     $foo->doStuff();
 }
 ```
+
+### Capture the output buffer, echo..
+
+`buffer()` method will capture all output to stdout and return it in a variable
+that you can test it's content.
+
+Let's assume the following method
+
+```php
+function sayHi() {
+    echo "Hello :)";
+}
+```
+
+If we want to capture and test the content of the echo message, we do
+
+```php
+function test__sayHi()
+{
+    $output = $this->buffer(function() {
+        $g = new Greeter;
+        $g->sayHi();
+    });
+
+    $this->assertEquals($output, 'Hello :)');
+}
+```
